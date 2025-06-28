@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BELAJAR ELEKTRO</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+  /* Reset and base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: #f2aa4c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    color: #ffcc40;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header / Hero */
+  header {
+    background: linear-gradient(135deg, #0077b6 0%, #90e0ef 100%);
+    color: #ffffff;
+    padding: 100px 0 70px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  }
+  header .container {
+    text-align: center;
+  }
+  header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.25);
+  }
+  header p {
+    font-size: 1.3rem;  
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-weight: 500;
+  }
+  .btn-primary {
+    background-color: #f2aa4c;
+    color: #111;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: 0 8px 15px rgba(242,170,76,0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-primary:hover {
+    background-color: #ffcc40;
+    box-shadow: 0 12px 22px rgba(255,204,64,0.5);
+  }
+
+  /* Section styles */
+  section {
+    padding: 80px 0;
+  }
+  section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    color: #f2aa4c;
+    margin-bottom: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  /* About */
+  #about {
+    background: #111827;
+    border-radius: 15px;
+    padding: 60px 40px;
+  }
+  #about p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #e4e6eb;
+    text-align: center;
+  }
+
+  /* Cards grid */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #162447;
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: 0 8px 30px rgba(22,36,71,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(242,170,76,0.8);
+  }
+  .card h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #f2aa4c;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  .card p {
+    color: #cbd5e1;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Icons for cards */
+  .card-icon {
+    font-size: 50px;
+    margin-bottom: 25px;
+    color: #ffcc40;
+  }
+
+  /* Faculty list */
+  .faculty-list {
+    max-width: 900px;
+    margin: 0 auto;
+    list-style: none;
+  }
+  .faculty-list li {
+    background: #111827;
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(22,36,71,0.4);
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+  }
+  .faculty-list li:hover {
+    background-color: #1e293b;
+  }
+
+  /* Labs section */
+  #labs .labs-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+  .lab-item {
+    background: #162447;
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 6px 25px rgba(22,36,71,0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .lab-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(242,170,76,0.7);
+  }
+  .lab-item h4 {
+    margin: 10px 0 5px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #f2aa4c;
+  }
+  .lab-item p {
+    font-size: 1rem;
+    color: #cbd5e1;
+  }
+
+  /* Contact section */
+  #contact {
+    background: #111827;
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  #contact p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  #contact a {
+    font-weight: 600;
+    color: #f2aa4c;
+    display: inline-block;
+    margin-top: 6px;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 400;
+  }
+
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2.8rem;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+  <div class="container">
+    <h1>Belajar Elektro</h1>
+    <p>Mengenal Komponen dasar elektronika</p>
+  </div>
+</header>
+
+<section id="programs">
+    <h2>Komponen Elektronik Dasar</h2>
+    <div class="cards container">
+      <div class="card" aria-label="Program Power Systems">
+        <div class="item"></div>
+          <img src="images/Resistor.png" alt="Resistor">
+        <h3>Resistor</h3>
+        <p>Resistor memiliki nilai resistansi yang diukur dalam Ohm (Ω) dan dapat digunakan untuk melindungi komponen lain dari arus yang berlebihan.</p>
+      </div>  
+      <div class="card" aria-label="Program Electronics">
+        <div class="item"></div>
+          <img src="images/kapasistor.jpg" alt="Kapasitor">
+        <h3>Kapasitor</h3>
+        <p>Kapasitor diukur dalam Farad (F) dan dapat digunakan untuk menghaluskan fluktuasi tegangan dalam rangkaian.</p>
+      </div>
+      <div class="card" aria-label="Program Control Systems">
+        <div class="item"></div>
+          <img src="images/Transistor 2.jpg" alt="Transistor">
+        <h3>Transistor</h3>
+        <p>Transistor adalah komponen kunci dalam sirkuit digital dan analog, digunakan dalam amplifier dan rangkaian logika.</p>
+      </div>
+      <div class="card" aria-label="Program Control Systems">
+        <div class="item"></div>
+          <img src="images/multimeter.png" alt="multimeter">
+        <h3>multimeter</h3>
+        <p>Terdapat dua jenis multimeter, yaitu analog dan digital, yang masing-masing memiliki cara pengukuran yang berbeda.</p>
+      </div>
+      <div class="card" aria-label="Program Control Systems">
+        <div class="item"></div>
+          <img src="images/MCb.jpg" alt="mcb">
+        <h3>Miniature Circuit Breaker</h3>
+        <p>MCB lebih aman dan lebih cepat dibandingkan dengan sekering tradisional dalam memutuskan arus.</p>
+      </div>
+      <div class="card" aria-label="Program Control Systems">
+        <div class="item"></div>
+          <img src="images/Dioda.png" alt="dioda">
+        <h3>Dioda</h3>
+        <p>Dioda juga digunakan dalam rangkaian penyearah dan sebagai pelindung dari arus balik.</p>
+      </div>
+      <div class="card" aria-label="Program Telecommunications">
+        <div class="item"></div>
+          <img src="images/Sensorpir.png" alt="sensorpir">
+        <h3>Sensorpir</h3>
+        <p>Sensor PIR sangat efisien dalam mendeteksi gerakan manusia dan dapat digunakan untuk menghidupkan lampu atau alarm secara otomatis.</p>
+      </div>         
+      </div>
+    </section>
+
+  <footer>
+    <p>© 2025 Belajar Elektro</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
